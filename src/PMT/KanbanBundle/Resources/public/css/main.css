@@ -1,0 +1,41 @@
+
+/**
+ * Kanban table
+ */
+table.kanban > tbody td {
+    padding-right: 0;
+    font-size: 13px;
+}
+table.kanban > tbody .item {
+    border: 1px #CCC solid;
+    border-left: 5px red solid;
+    border-bottom: 0;
+    padding: 5px;
+    position: relative;
+}
+table.kanban .item:last-child {
+    border-bottom: 1px #CCC solid;
+}
+table.kanban .item .dl-horizontal {
+    margin-bottom: 0;
+    min-height: 60px;
+    margin-right: 30px;
+}
+table.kanban .item .dl-horizontal dt {
+    line-height: 20px;
+    width: 1.1em;
+}
+table.kanban .item .dl-horizontal dd {
+    margin-left: 20px;
+}
+table.kanban .item .meta {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 3px;
+}
+table.kanban .item .meta img {
+    border-radius: 3px;
+    margin: 0 3px 3px 0;
+    vertical-align: middle;
+}

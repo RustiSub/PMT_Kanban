@@ -1,5 +1,25 @@
-{% extends "PMTKanbanBundle:Layout:html.html.twig" %}
+{% extends "PMTKanbanBundle:Layout:page.html.twig" %}
 
-{% block body %}
-    test
+{% block css %}
+    {{ parent() }}
+    {% stylesheets
+        'bundles/pmtkanban/css/main.css'
+        filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
 {% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Board</h1>
+            {{ include("PMTKanbanBundle:Board:board.html.twig", {
+                'backlog_count': 12,
+                'waiting_count': 4,
+                'progress_count': 5,
+                'done_count': 4,
+            }) }}
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,62 @@
+{% block kanban_board %}
+    <div class="table-responsive">
+        <table class="table kanban table-condensed">
+            <thead>
+            <tr>
+                <th>Backlog</th>
+                <th>Waiting</th>
+                <th>In progress</th>
+                <th>Done</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for i in range(1, backlog_count) %}
+                            {{ block('kanban_item') }}
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for i in range(1, waiting_count) %}
+                            {{ block('kanban_item') }}
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for i in range(1, progress_count) %}
+                            {{ block('kanban_item') }}
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul class="list-unstyled">
+                        {% for i in range(1, done_count) %}
+                            {{ block('kanban_item') }}
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+{% block kanban_item %}
+    <li class="item">
+        <dl class="dl-horizontal">
+            <dt class="glyphicon glyphicon-tag"></dt>
+            <dd>title</dd>
+            <dt class="glyphicon glyphicon-subtitles"></dt>
+            <dd>some basic description of the item</dd>
+        </dl>
+        <div class="meta">
+            <img width="28" height="28" src="https://1.gravatar.com/avatar/c31151cf8c6c0668204c4e8957a51d62?d=https%3A%2F%2Fidenticons.github.com%2Fad47a690a1d35f8eadbb457e93769284.png&amp;r=x&amp;s=140" class="gravatar">
+            <br/>
+            <span class="badge">3h</span>
+        </div>
+    </li>
+{% endblock %}
