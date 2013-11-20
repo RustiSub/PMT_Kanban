@@ -1,0 +1,3 @@
+pmt_kanban_homepage:
+    pattern:  /
+    defaults: { _controller: PMTKanbanBundle:Default:index }

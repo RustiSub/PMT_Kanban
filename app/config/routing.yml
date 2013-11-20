@@ -1,0 +1,4 @@
+pmt_kanban:
+    resource: "@PMTKanbanBundle/Resources/config/routing.yml"
+    prefix:   /
+

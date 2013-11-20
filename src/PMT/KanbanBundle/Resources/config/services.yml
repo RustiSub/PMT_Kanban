@@ -1,0 +1,7 @@
+parameters:
+#    pmt_kanban.example.class: PMT\KanbanBundle\Example
+
+services:
+#    pmt_kanban.example:
+#        class: %pmt_kanban.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
