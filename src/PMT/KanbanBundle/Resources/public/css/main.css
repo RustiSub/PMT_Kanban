@@ -7,11 +7,20 @@ table.kanban > tbody td {
     font-size: 13px;
 }
 table.kanban > tbody .item {
-    border: 1px #CCC solid;
-    border-left: 5px red solid;
-    border-bottom: 0;
+    border: 1px solid #CCC;
+    border-bottom-width: 0;
+    border-left-width: 5px;
     padding: 5px;
     position: relative;
+}
+table.kanban > tbody .item.item-bug {
+    border-left-color: #ee0000;
+}
+table.kanban > tbody .item.item-feature {
+    border-left-color: #4444dd;
+}
+table.kanban > tbody .item.item-enhancement {
+    border-left-color: #ffcc00;
 }
 table.kanban .item:last-child {
     border-bottom: 1px #CCC solid;

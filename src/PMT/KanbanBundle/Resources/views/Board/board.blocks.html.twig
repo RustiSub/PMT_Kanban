@@ -3,10 +3,10 @@
         <table class="table kanban table-condensed">
             <thead>
             <tr>
-                <th>Backlog</th>
-                <th>Waiting</th>
-                <th>In progress</th>
-                <th>Done</th>
+                <th>Backlog <span class="badge">{{ backlog_count }}</span></th>
+                <th>Waiting <span class="badge">{{ waiting_count }}</span></th>
+                <th>In progress <span class="badge">{{ progress_count }}</span></th>
+                <th>Done <span class="badge">{{ done_count }}</span></th>
             </tr>
             </thead>
             <tbody>
@@ -46,7 +46,7 @@
 {% endblock %}
 
 {% block kanban_item %}
-    <li class="item">
+    <li class="item {{ random(['item-feature', 'item-bug', 'item-enhancement']) }}">
         <dl class="dl-horizontal">
             <dt class="glyphicon glyphicon-tag"></dt>
             <dd>title</dd>
@@ -56,7 +56,7 @@
         <div class="meta">
             <img width="28" height="28" src="https://1.gravatar.com/avatar/c31151cf8c6c0668204c4e8957a51d62?d=https%3A%2F%2Fidenticons.github.com%2Fad47a690a1d35f8eadbb457e93769284.png&amp;r=x&amp;s=140" class="gravatar">
             <br/>
-            <span class="badge">3h</span>
+            <span class="label {{ random(['label-success', 'label-danger', 'label-warning']) }}">{{ random(18) }}h</span>
         </div>
     </li>
 {% endblock %}
