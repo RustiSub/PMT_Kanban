@@ -9,6 +9,13 @@
     {% endstylesheets %}
 {% endblock %}
 
+{% block js_head %}
+	{{ parent() }}
+	<script type="text/javascript">
+
+	</script>
+{% endblock %}
+
 {% block content %}
     <div class="row">
         <div class="col-md-12">
