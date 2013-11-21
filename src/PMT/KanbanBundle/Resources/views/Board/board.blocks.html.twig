@@ -13,15 +13,13 @@
             <tbody>
             <tr>
                 <td>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled" ondrop="drop(event)" ondragover="allowDrop(event)">
 						{{ block('kanban_items') }}
                     </ul>
                 </td>
                 <td>
-                    <ul class="list-unstyled">
-                        {% for i in range(1, waiting_count) %}
-                            {{ block('kanban_item') }}
-                        {% endfor %}
+                    <ul class="list-unstyled" ondrop="drop(event)" ondragover="allowDrop(event)">
+						{{ block('kanban_items') }}
                     </ul>
                 </td>
                 <td>
@@ -46,7 +44,10 @@
 
 {% block kanban_items %}
 	{#<li ng-repeat="phone in phones | filter:query | orderBy:orderProp">#}
-	<li ng-repeat="item in items " class="item {{ random(['item-feature', 'item-bug', 'item-enhancement']) }}">
+	<li ng-repeat="item in items " class="item {{ random(['item-feature', 'item-bug', 'item-enhancement']) }}"
+		draggable="true" ondragstart="drag(event)"
+		id="{[{ item.id }]}"
+	>
 		<dl class="dl-horizontal">
 			<dt class="glyphicon glyphicon-tag"></dt>
 			<dd>{[{ item.title }]}</dd>
